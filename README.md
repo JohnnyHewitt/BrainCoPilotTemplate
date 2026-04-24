@@ -1,12 +1,12 @@
-# Claude Project Template
+# Copilot Project Template
 
 A starter template for AI-assisted development with strong guardrails,
-repeatability, and auditability.
+repeatability, and auditability — built for GitHub Copilot in VS Code.
 
 **This is a template repository.** Use it to scaffold new projects that work
-safely and predictably with Claude Code and similar AI tools.
+safely and predictably with GitHub Copilot.
 
-For attribution and license info, see [ClaudeTemplate.md](ClaudeTemplate.md).
+For attribution and license info, see [CopilotTemplate.md](CopilotTemplate.md).
 
 ---
 
@@ -27,17 +27,18 @@ For attribution and license info, see [ClaudeTemplate.md](ClaudeTemplate.md).
 
 1. Click **Use this template** → **Create a new repository**
 2. Clone your new repository
-3. Open with Claude Code and follow the setup prompts
+3. Open in VS Code with GitHub Copilot active
+4. Open Copilot Chat — the bootstrap flow will guide you through setup
 
 ### Option 2: Add to Existing Project
 
 ```bash
-mkdir -p .claude/commands
-curl -sL https://raw.githubusercontent.com/HelpIRL/ClaudeTemplateV1/main/.claude/commands/template-update.md \
-  -o .claude/commands/template-update.md
+mkdir -p .github/prompts
+curl -sL https://raw.githubusercontent.com/HelpIRL/CopilotTemplateV1/main/.github/prompts/template-update.prompt.md \
+  -o .github/prompts/template-update.prompt.md
 ```
 
-Then run `/template-update` in Claude Code and choose what to install.
+Then use `/template-update` in Copilot Chat and choose what to install.
 
 ---
 
@@ -45,12 +46,11 @@ Then run `/template-update` in Claude Code and choose what to install.
 
 | Component | Purpose |
 |-----------|---------|
-| `CLAUDE.md` | AI behavior rules and guardrails |
-| `CONTEXT.md` | Project structure (configured during setup) |
-| `.claude/commands/` | Slash commands (`/brain`, `/commit`, `/review`) |
-| `.claude/skills/` | Behavioral patterns applied automatically |
-| `.claude/hooks/` | Workflow scripts (pre-commit, post-edit) |
-| `Intents/` | Structured intent breakdown system |
+| `.github/copilot-instructions.md` | AI behavior rules and guardrails (auto-applied) |
+| `AGENTS.md` | Project structure and constraints (configured during setup) |
+| `.github/prompts/` | Prompt commands (`/brain`, `/commit`, `/review`, etc.) |
+| `.github/instructions/` | Behavioral patterns applied automatically by Copilot |
+| `Intents/` | Structured intent breakdown system using the BRAIN method |
 
 ---
 
@@ -58,11 +58,13 @@ Then run `/template-update` in Claude Code and choose what to install.
 
 Once configured, your project will have:
 
-- **CONTEXT.md** — Your project structure and constraints
+- **AGENTS.md** — Your project structure and constraints
 - **README.md** — Your project documentation (replaces this file)
-- **ClaudeTemplate.md** — Template attribution (keep this)
+- **CopilotTemplate.md** — Template attribution (keep this)
 
-### Key Commands
+### Prompt Commands
+
+Use these in GitHub Copilot Chat (type `/` to see the full list):
 
 | Command | Purpose |
 |---------|---------|
@@ -71,6 +73,7 @@ Once configured, your project will have:
 | `/review` | Code review current changes |
 | `/status` | Project status overview |
 | `/recap` | Re-establish context after a break |
+| `/test` | Run project tests |
 
 ---
 
@@ -82,8 +85,8 @@ To pull improvements from the template without affecting your project config:
 /template-update
 ```
 
-This updates commands, skills, and hooks while preserving your `CONTEXT.md`,
-`README.md`, and settings.
+This updates prompt commands and instructions while preserving your `AGENTS.md`,
+`README.md`, and any project-specific files.
 
 ---
 
@@ -91,7 +94,7 @@ This updates commands, skills, and hooks while preserving your `CONTEXT.md`,
 
 Contributions welcome! This template is maintained by **HelpIRL LLC**.
 
-- Issues: [GitHub Issues](https://github.com/HelpIRL/ClaudeTemplateV1/issues)
+- Issues: [GitHub Issues](https://github.com/HelpIRL/CopilotTemplateV1/issues)
 - Email: john@helpirl.com
 
 Before contributing:
@@ -100,23 +103,20 @@ Before contributing:
 3. Test changes with a fresh project
 4. Submit a pull request
 
-See [ClaudeTemplate.md](ClaudeTemplate.md) for license and attribution.
+See [CopilotTemplate.md](CopilotTemplate.md) for license and attribution.
 
 ---
 
 ## Files in This Template
 
 ```
-├── CLAUDE.md              # AI behavior contract
-├── ClaudeTemplate.md      # Attribution and bootstrap logic
-├── CONTEXT.md             # Project context (placeholder until configured)
-├── README.md              # This file (replaced during setup)
-├── LICENSE                # MIT License
-├── .claude/
-│   ├── commands/          # Slash commands
-│   ├── skills/            # Behavioral patterns
-│   ├── hooks/             # Workflow scripts
-│   └── settings.json      # Permissions and config
-├── .github/               # Issue templates, PR templates
-└── Intents/               # Intent breakdown structure
+├── AGENTS.md                          # Project context (placeholder until configured)
+├── CopilotTemplate.md                 # Attribution and bootstrap logic
+├── README.md                          # This file (replaced during setup)
+├── LICENSE                            # MIT License
+├── .github/
+│   ├── copilot-instructions.md        # AI behavior contract (auto-applied)
+│   ├── prompts/                       # Prompt commands (/brain, /commit, etc.)
+│   └── instructions/                  # Behavioral patterns (always-on)
+└── Intents/                           # Intent breakdown structure
 ```
