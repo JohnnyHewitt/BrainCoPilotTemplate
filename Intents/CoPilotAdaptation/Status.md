@@ -11,7 +11,7 @@
 | 6 | ContextPlaceholder | Done | 30m | | |
 | 7 | ReadmeUpdate | Done | 30m | | |
 | 8 | CleanupLegacy | Done | 30m | | |
-| 9 | EndToEndValidation | Todo | 1h | | |
+| 9 | EndToEndValidation | In Progress | 1h | | Awaiting manual walkthrough by human |
 
 > Claude may update **Status** column. Human owns **Actual** column.
 
