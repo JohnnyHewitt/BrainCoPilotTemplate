@@ -1,6 +1,6 @@
-# Validate Claude Code configuration files
+# Validate Copilot template configuration files
 #
-# This workflow checks that required Claude Code files exist and are valid.
+# This workflow checks that required CoPilot template files exist and are valid.
 # Customize the checks based on your project requirements.
 
 name: Validate Config
@@ -8,16 +8,16 @@ name: Validate Config
 on:
   push:
     paths:
-      - 'CLAUDE.md'
-      - 'CONTEXT.md'
-      - '.claude/**'
-      - '.mcp.json'
+      - '.github/copilot-instructions.md'
+      - 'AGENTS.md'
+      - '.github/prompts/**'
+      - '.github/instructions/**'
   pull_request:
     paths:
-      - 'CLAUDE.md'
-      - 'CONTEXT.md'
-      - '.claude/**'
-      - '.mcp.json'
+      - '.github/copilot-instructions.md'
+      - 'AGENTS.md'
+      - '.github/prompts/**'
+      - '.github/instructions/**'
 
 jobs:
   validate:
@@ -27,11 +27,11 @@ jobs:
 
       - name: Check required files exist
         run: |
-          echo "Checking required Claude Code files..."
+          echo "Checking required Copilot template files..."
 
           missing=0
 
-          for file in CLAUDE.md CONTEXT.md; do
+          for file in .github/copilot-instructions.md AGENTS.md; do
             if [ ! -f "$file" ]; then
               echo "::error::Missing required file: $file"
               missing=1
@@ -44,29 +44,25 @@ jobs:
             exit 1
           fi
 
-      - name: Validate JSON files
+      - name: Check prompt files exist
         run: |
-          echo "Validating JSON configuration files..."
+          echo "Checking prompt files..."
 
-          for file in .claude/settings.json .mcp.json; do
-            if [ -f "$file" ]; then
-              if python3 -m json.tool "$file" > /dev/null 2>&1; then
-                echo "✓ $file is valid JSON"
-              else
-                echo "::error::Invalid JSON in $file"
-                exit 1
-              fi
+          for file in .github/prompts/brain.prompt.md .github/prompts/commit.prompt.md; do
+            if [ ! -f "$file" ]; then
+              echo "::warning::Missing prompt file: $file"
+            else
+              echo "✓ $file exists"
             fi
           done
 
-      - name: Check for secrets in CLAUDE.md
+      - name: Check for secrets in instructions
         run: |
           echo "Scanning for potential secrets..."
 
-          # Basic patterns that might indicate secrets
           patterns="password|secret|api_key|apikey|token|credential"
 
-          if grep -iE "$patterns" CLAUDE.md CONTEXT.md 2>/dev/null | grep -v "^#"; then
+          if grep -iE "$patterns" .github/copilot-instructions.md AGENTS.md 2>/dev/null | grep -v "^#"; then
             echo "::warning::Potential secrets found. Please review."
           else
             echo "✓ No obvious secrets detected"

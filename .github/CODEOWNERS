@@ -7,11 +7,12 @@
 * @OWNER
 
 # AI behavior and guardrails - require explicit review
-CLAUDE.md @OWNER
-.claude/ @OWNER
+.github/copilot-instructions.md @OWNER
+.github/prompts/ @OWNER
+.github/instructions/ @OWNER
 
 # Project context - require explicit review
-CONTEXT.md @OWNER
+AGENTS.md @OWNER
 
 # Security policy
 .github/SECURITY.md @OWNER

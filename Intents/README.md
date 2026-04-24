@@ -23,7 +23,7 @@ Intents/
 
 ## Creating Intents
 
-Use the `/brain` command to scaffold a new feature:
+Use the `/brain` prompt in Copilot Chat to scaffold a new feature:
 
 ```
 /brain "My Feature Name"
@@ -40,4 +40,4 @@ This creates the folder structure and guides you through the BRAIN workflow.
 | Blocked | Waiting on something external |
 | Done | Completed and committed |
 
-See [CLAUDE.md](../CLAUDE.md) for intent execution rules.
+See [.github/copilot-instructions.md](../.github/copilot-instructions.md) for intent execution rules.
