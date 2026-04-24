@@ -7,7 +7,7 @@
 | 2 | CopilotInstructions | Done | 1h | | |
 | 3 | PromptFiles | Done | 2h | | |
 | 4 | InstructionsFiles | Done | 1h | | |
-| 5 | BootstrapDoc | Todo | 1.5h | | |
+| 5 | BootstrapDoc | Done | 1.5h | | |
 | 6 | ContextPlaceholder | Todo | 30m | | |
 | 7 | ReadmeUpdate | Todo | 30m | | |
 | 8 | CleanupLegacy | Todo | 30m | | |
