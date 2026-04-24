@@ -3,7 +3,7 @@
 ## Intents
 | No. | Name | Status | Est. | Actual | Notes |
 |----:|------|--------|-----:|-------:|-------|
-| 1 | AuditClaudeRefs | Todo | 1h | | |
+| 1 | AuditClaudeRefs | Done | 1h | | |
 | 2 | CopilotInstructions | Todo | 1h | | |
 | 3 | PromptFiles | Todo | 2h | | |
 | 4 | InstructionsFiles | Todo | 1h | | |
