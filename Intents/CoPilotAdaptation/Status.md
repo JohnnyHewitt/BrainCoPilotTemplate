@@ -10,7 +10,7 @@
 | 5 | BootstrapDoc | Done | 1.5h | | |
 | 6 | ContextPlaceholder | Done | 30m | | |
 | 7 | ReadmeUpdate | Done | 30m | | |
-| 8 | CleanupLegacy | Todo | 30m | | |
+| 8 | CleanupLegacy | Done | 30m | | |
 | 9 | EndToEndValidation | Todo | 1h | | |
 
 > Claude may update **Status** column. Human owns **Actual** column.
